@@ -1,9 +1,9 @@
-## Welcome to Stripe Stack SQLite Deployment.
+## Welcome to Job Ticket SQLite Deployment.
 
-This is the Intermediate Deployment for [Fly.io](https://fly.io). If you are new to Fly, I'll recommend selecting the [SIMPLE-DATABASE.md](https://github.com/dev-xo/dev-xo/tree/main/stripe-stack/docs) file of your choice.
+This is the Intermediate Deployment for [Fly.io](https://fly.io). If you are new to Fly, I'll recommend selecting the [SIMPLE-DATABASE.md](https://github.com/thesoftwarecottage/thesoftwarecottage/tree/main/job-ticket/docs) file of your choice.
 
 > **Note**
-> Before continuing, make sure you have the required Stripe Webhook Secret Key for production. If not, please check the [following docs](https://github.com/dev-xo/dev-xo/tree/main/stripe-stack/docs).
+> Before continuing, make sure you have the required Stripe Webhook Secret Key for production. If not, please check the [following docs](https://github.com/thesoftwarecottage/thesoftwarecottage/tree/main/job-ticket/docs).
 
 Let's deploy our app!
 
@@ -60,7 +60,7 @@ fly volumes create data --size 1 --app job-ticket-staging
 9. Set Fly.io secrets for the current template. Fill the required `.env` variables and run the following command in your console.
 
 ```sh
-flyctl secrets set NODE_ENV=production ENCRYPTION_SECRET="" PROD_HOST_URL="https://stripe-stack.fly.dev" EMAIL_PROVIDER_API_KEY= GOOGLE_CLIENT_ID= GOOGLE_CLIENT_SECRET= STRIPE_PUBLIC_KEY= STRIPE_SECRET_KEY= PROD_STRIPE_WEBHOOK_ENDPOINT=
+flyctl secrets set NODE_ENV=production ENCRYPTION_SECRET="" PROD_HOST_URL="https://job-ticket.fly.dev" EMAIL_PROVIDER_API_KEY= GOOGLE_CLIENT_ID= GOOGLE_CLIENT_SECRET= STRIPE_PUBLIC_KEY= STRIPE_SECRET_KEY= PROD_STRIPE_WEBHOOK_ENDPOINT=
 ```
 
 > **Warning**
@@ -82,5 +82,5 @@ The SQLite database lives at `/data/sqlite.db` in your deployed application. You
 
 ### Done!
 
-Return to main [Stripe Stack](https://github.com/dev-xo/stripe-stack) repository.<br />
+Return to main [Job Ticket](https://github.com/thesoftwarecottage/job-ticket) repository.<br />
 Also leave a ⭐️ if you found it useful! Thank you!

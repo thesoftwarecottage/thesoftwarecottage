@@ -1,6 +1,6 @@
-## Welcome to Stripe Stack Deployment
+## Welcome to Job Ticket Deployment
 
-This is the [Stripe Stack](https://github.com/dev-xo/stripe-stack) Deployment for [Fly.io](https://fly.io)
+This is the [Job Ticket](https://github.com/thesoftwarecottage/job-ticket) Deployment for [Fly.io](https://fly.io)
 
 Select the file that matches your database choice and follow the steps inside it. If at any point you get stuck, you can always reach out the [Fly.io Docs](https://fly.io/docs/), or ask for some help into the [Remix Discord](https://discord.com/invite/xwx7mMzVkA).
 
