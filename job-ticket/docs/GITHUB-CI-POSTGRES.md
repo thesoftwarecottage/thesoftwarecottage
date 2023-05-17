@@ -18,12 +18,12 @@ fly auth login
 3. Create two apps on Fly, one for staging and one for production: _(Staging steps are optional, you can skip them for the entire process.)_
 
 ```sh
-fly apps create template-name
-fly apps create template-name-staging
+fly apps create job-ticket
+fly apps create job-ticket-staging
 ```
 
 > **Note**
-> You'll have to replace `template-name` with the name of your app for the rest of the steps.
+> You'll have to replace `job-ticket` with the name of your app for the rest of the steps.
 > Make sure this name matches the `app` set into `fly.toml` file. Otherwise, you will not be able to deploy.
 
 4. Initialize Git:
@@ -43,8 +43,8 @@ git remote add origin <ORIGIN_URL>
 7. Add a `SESSION_SECRET` to your fly app secrets, to do this you can run the following commands:
 
 ```sh
-fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app template-name
-fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app template-name-staging
+fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app job-ticket
+fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app job-ticket-staging
 ```
 
 > **Note**
@@ -53,11 +53,11 @@ fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app template-name-stagi
 8. Create a persistent volume for your PostgreSQL database. Run the following:
 
 ```sh
-fly postgres create --name template-name-db
-fly postgres attach template-name-db
+fly postgres create --name job-ticket-db
+fly postgres attach job-ticket-db
 
-fly postgres create --name template-name-staging-db
-fly postgres attach template-name-staging-db
+fly postgres create --name job-ticket-staging-db
+fly postgres attach job-ticket-staging-db
 ```
 
 9. Set Fly.io secrets for the current template. Fill the required `.env` variables and run the following command in your console.

@@ -18,17 +18,17 @@ fly auth login
 3. Create your Fly app:
 
 ```sh
-fly apps create template-name
+fly apps create job-ticket
 ```
 
 > **Note**
-> You'll have to replace `template-name` with the name of your app for the rest of the steps.
+> You'll have to replace `job-ticket` with the name of your app for the rest of the steps.
 > Make sure this name matches the `app` set into `fly.toml` file. Otherwise, you will not be able to deploy.
 
 4. Add a `SESSION_SECRET` to your fly app secrets, to do this you can run the following command:
 
 ```sh
-fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app template-name
+fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app job-ticket
 ```
 
 > **Note**
@@ -37,8 +37,8 @@ fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app template-name
 5. Create a persistent volume for your PostgreSQL database. Run the following:
 
 ```sh
-fly postgres create --name template-name-db
-fly postgres attach template-name-db
+fly postgres create --name job-ticket-db
+fly postgres attach job-ticket-db
 ```
 
 6. Set up your Fly.io secrets for the current app. Fill the bellow `.env` variables and run the following command in your console.
